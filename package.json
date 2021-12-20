@@ -1,0 +1,25 @@
+{
+    "name": "function-plotter",
+    "version": "1.0.0",
+    "description": "A simple GUI function plotter using electron.",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/0xmostafam/function-plotter.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/0xmostafam/function-plotter/issues"
+    },
+    "homepage": "https://github.com/0xmostafam/function-plotter#readme",
+    "devDependencies": {
+        "electron": "^16.0.5"
+    },
+    "dependencies": {
+        "chart.js": "^3.6.2"
+    }
+}
