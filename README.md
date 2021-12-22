@@ -19,7 +19,7 @@ npm start
 
 ![](https://i.imgur.com/gKRQRP0.png)
 
-## Some Functions Plotted
+## Some Plotted Functions
 
 -   `x ^ 2`
 
