@@ -1,6 +1,6 @@
 # Function Plotter
 
-A simple GUI function plotter using electron.
+A simple GUI function plotter using Electron and ChartJS.
 
 ## GUI
 

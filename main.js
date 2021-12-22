@@ -1,18 +1,16 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow } = require("electron");
 
 let win;
 const createWindow = () => {
-    win = new BrowserWindow({
-        width: 1000,
-        height: 600,
-        webPreferences: {
-            preload: `${__dirname}/preload.js`
-        }
-    });
-
-    win.loadFile('index.html');
-}
+	win = new BrowserWindow({
+		width: 1000,
+		height: 600,
+		titleBarStyle: "hidden",
+	});
+	win.setMenuBarVisibility(false);
+	win.loadFile("index.html");
+};
 
 app.whenReady().then(() => {
-    createWindow();
-})
+	createWindow();
+});
