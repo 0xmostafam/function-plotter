@@ -12,7 +12,7 @@ const plot = (e) => {
 
 	if (maxNumber <= minNumber) {
 		document.getElementById("plot-text").textContent =
-			"Max Should Be Bigger Than Min";
+			"Max should be bigger than Min";
 
 		return;
 	}
@@ -33,7 +33,7 @@ const plot = (e) => {
 document.getElementById("form").addEventListener("submit", plot);
 
 const evaulateYAxis = (formula, x) => {
-	const precedence = { "^": 3, "*": 2, "+": 1, "-": 1 };
+	const precedence = { "^": 3, "*": 2, "/": 2, "+": 1, "-": 1 };
 	const numberStack = [];
 	const operandsStack = [];
 	const y = [];
@@ -55,14 +55,20 @@ const evaulateYAxis = (formula, x) => {
 				}
 				if (
 					operandsStack.length &&
-					precedence[operandsStack.at(-1)] > precedence[formula[i]]
+					precedence[operandsStack.at(-1)] >= precedence[formula[i]]
 				) {
-					numberStack.push(
-						evaulateOperands(
-							numberStack.pop(),
-							numberStack.pop(),
-							operandsStack.pop()
-						)
+					do {
+						numberStack.push(
+							evaulateOperands(
+								numberStack.pop(),
+								numberStack.pop(),
+								operandsStack.pop()
+							)
+						);
+					} while (
+						operandsStack.length &&
+						precedence[operandsStack.at(-1)] >=
+							precedence[formula[i]]
 					);
 				}
 				flagX = false;

@@ -13,13 +13,15 @@ const evaulateOperands = (num2, num1, operand) => {
 		return num1 * num2;
 	} else if (operand === "+") {
 		return num1 + num2;
+	} else if (operand === "/") {
+		return num1 / num2;
 	} else {
 		return num1 - num2;
 	}
 };
 
 const isFormulaValid = (formula) => {
-	const formulaSplited = formula.split(/[\+\-\*\^]/);
+	const formulaSplited = formula.split(/[\+\-\*\^\/]/);
 	const formulaMapped = formulaSplited.map((element) => element.trim());
 	const isValid = formulaMapped.every((element) => /^(\d+|x)$/.test(element));
 
